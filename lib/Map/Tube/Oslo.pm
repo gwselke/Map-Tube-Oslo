@@ -14,7 +14,7 @@ use version 0.77 ( );
 use strict;
 use warnings;
 
-our $VERSION = version->declare('v0.1.4');
+our $VERSION = version->declare('v0.1.5');
 
 =encoding utf8
 
@@ -34,24 +34,26 @@ with 'Map::Tube';
 
 =head1 SYNOPSIS
 
-	use Map::Tube::Oslo;
-	my $tube = Map::Tube::Oslo->new();
+  use Map::Tube::Oslo;
+  my $tube = Map::Tube::Oslo->new();
 
-	my $route = $tube->get_shortest_route( 'Slottet', 'Skillebekk');
+  my $route = $tube->get_shortest_route( 'Slottet', 'Skillebekk');
 
-    print "Route: $route\n";
+  print "Route: $route\n";
 
 =head1 DESCRIPTION
 
 This module allows to find the shortest route between any two given tube or tram
-stations in Oslo. All interesting methods are provided by the role L<Map::Tube>.
+stations in Oslo.
+
+All interesting methods are provided by the role L<Map::Tube>.
 
 =head1 METHODS
 
 =head2 CONSTRUCTOR
 
-	use Map::Tube::Oslo;
-	my $tube = Map::Tube::Oslo->new();
+  use Map::Tube::Oslo;
+  my $tube = Map::Tube::Oslo->new();
 
 The only argument, C<xml>, is optional; if specified, it should be a code ref
 to a function that returns either the path the XML map file, or a string
@@ -75,6 +77,16 @@ L<https://github.com/gwselke/Map-Tube-Oslo/issues>. I will be
 notified and then you'll automatically be notified of progress on your
 bug when (and if) I make changes.
 
+=head1 CONTRIBUTING
+
+The Perl code as such is fairly trivial (which does not imply free of bugs), so there
+is probably little opportunity to contribute interesting things. However, the tube lines
+and stations will probably evolve. I would be grateful to be informed about any such changes
+(or, indeed, of errors of mine). The best way to contribute is to create an issue and to
+list any updated line and station information in plain UTF-8 text, or to attach this
+information in a plain text file. Do not change the XML file, since this is mechanically
+generated from a different, internal file format.
+
 =head1 AUTHOR
 
 Gisbert W. Selke, TapirSoft Selke & Selke GbR.
@@ -87,7 +99,7 @@ it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
-L<Map::Tube>, L<Map::Tube::GraphViz>.
+L<Map::Tube>, L<Map::Tube::GraphViz>, L<Map::Tube::CLI>.
 
 =cut
 
